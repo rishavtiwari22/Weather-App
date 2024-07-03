@@ -1,0 +1,39 @@
+.weatherBg{
+    background-image: url('https://miro.medium.com/v2/resize:fit:5120/1*GsImz-edoeuqCMfKxDus0w.jpeg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-size: 1.5rem;
+    font-weight: 600;
+    text-align: center;
+    padding: 0 1rem;
+}
+
+.weatherResultBox{
+  background-color: whitesmoke;
+  margin:auto;
+  width: 500px;
+  height:300px;
+  
+}
+
+.weathericon{
+  width:80px;
+  height:80px;
+  margin-top: 1rem;
+}
+
+.weathercity{
+  padding-top: 1rem;
+  font-size: 25px;
+}
+.weathertemp{
+  font-size: 45px;
+  font-weight: 600;
+
+}
