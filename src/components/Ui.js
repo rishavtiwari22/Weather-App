@@ -20,7 +20,7 @@ const UI = () => {
 
   const validatePassword = (password) => {
     if (password.length < 6) {
-      alert("Password must be at least 6 characters long");
+      alert("Password 6 characters se bada dal bhai!");
       return false;
     } else {
       return true;

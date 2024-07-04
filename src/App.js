@@ -43,7 +43,7 @@ function App() {
 
   useEffect(() => {
     getweather("Allahabad");
-  }, []);
+  },[]);
 
   const handlesearch = () => {
     getweather(inputcity);
@@ -358,9 +358,21 @@ function App() {
             key={index}
           > 
             <div className="d-flex align-items-center m-1">
-              <h6 className="m-2 pb-2">{weeklydata[index]?.dt_txt.slice(0, 10)}</h6>
-              <h6 className="ms-5 pt-2">{getDayOfWeek(weeklydata[index]?.dt_txt.slice(0, 10))}</h6>
+              <h5 className="m-2 pb-2 pe-5 ps-2">{getDayOfWeek(weeklydata[index]?.dt_txt.slice(0, 10))}</h5>
+              <img
+                className="ms-5 pb-1"
+                src={cardweathericon(weeklydata[index]?.weather?.[0]?.main)}
+                width="40px"
+                height="40px"
+                alt=""
+              />
             </div>
+
+            <div className="d-flex align-items-center m-1">
+              <h6 className="ms-2">{weeklydata[index]?.dt_txt.slice(0, 10)}</h6>
+              <p className="ms-5">{weeklydata[index]?.weather?.[0]?.main}</p>
+            </div>
+
             <div className="d-flex align-items-center ">
               <p className="ms-2">
                 Max : {weeklydata[index]?.main?.temp_max}°C
@@ -369,18 +381,7 @@ function App() {
                 Min : {weeklydata[index]?.main?.temp_min}°C
               </p>
             </div>
-            <div className="d-flex align-items-center m-1">
-              <p className="ms-2">
-                Weather : {weeklydata[index]?.weather?.[0]?.main}
-              </p>
-              <img
-                className="ms-4 pb-1 "
-                src={cardweathericon(weeklydata[index]?.weather?.[0]?.main)}
-                width="40px"
-                height="40px"
-                alt=""
-              />
-            </div>
+
           </div>
         ))}
       </div>  
@@ -398,9 +399,21 @@ function App() {
             key={index}
           > 
             <div className="d-flex align-items-center m-1">
-              <h6 className="m-2 pb-2">{weeklydata[index]?.dt_txt.slice(0, 10)}</h6>
-              <h6 className="ms-5 pt-1">{getDayOfWeek(weeklydata[index]?.dt_txt.slice(0, 10))}</h6>
+              <h5 className="m-2 pb-2 pe-5 ps-2">{getDayOfWeek(weeklydata[index]?.dt_txt.slice(0, 10))}</h5>
+              <img
+                className="ms-5 pb-1"
+                src={cardweathericon(weeklydata[index]?.weather?.[0]?.main)}
+                width="40px"
+                height="40px"
+                alt=""
+              />
             </div>
+
+            <div className="d-flex align-items-center m-1">
+              <h6 className="ms-2">{weeklydata[index]?.dt_txt.slice(0, 10)}</h6>
+              <p className="ms-5">{weeklydata[index]?.weather?.[0]?.main}</p>
+            </div>
+
             <div className="d-flex align-items-center ">
               <p className="ms-2">
                 Max : {weeklydata[index]?.main?.temp_max}°C
@@ -409,21 +422,10 @@ function App() {
                 Min : {weeklydata[index]?.main?.temp_min}°C
               </p>
             </div>
-            <div className="d-flex align-items-center m-1">
-              <p className="ms-2">
-                Weather : {weeklydata[index]?.weather?.[0]?.main}
-              </p>
-              <img
-                className="ms-4 pb-1 "
-                src={cardweathericon(weeklydata[index]?.weather?.[0]?.main)}
-                width="40px"
-                height="40px"
-                alt=""
-              />
-            </div>
+
           </div>
         ))}
-      </div> 
+      </div>   
     </div>
   );
 }
