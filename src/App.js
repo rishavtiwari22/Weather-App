@@ -216,7 +216,7 @@ function App() {
 
   return (
     <div
-      className="d-flex flex-column flex-lg-row justify-content-start ps-5 py-3 "
+      className="d-flex flex-column flex-lg-row justify-content-start ps-5 pt-5 pe-5 pb-5"
       style={{
         backgroundImage: backgroundImageUrl
           ? `url(${backgroundImageUrl})`
@@ -227,7 +227,7 @@ function App() {
         width: "100vw",
       }}
     >
-      <div className="col-md-4 col-lg-3 col-xl-5 mt-5 ps-5 pt-5 pe-5">
+      <div className="col-md-4 col-lg-3 col-xl-5 mt-5 pt-5 ps-5 ms-5">
         <div
           className="card text-body shadow-lg"
           style={{
@@ -344,7 +344,7 @@ function App() {
         </div>
       </div>
 
-      <div className="d-flex flex-column justify-content-center ms-5 pt-5">
+      <div className="d-flex flex-column justify-content-start ms-5" style={{padding:"80px"}}>
         {[0, 15, 31].map((index) => (
           <div
             className="card m-4"  
@@ -385,7 +385,7 @@ function App() {
           </div>
         ))}
       </div>  
-      <div className="d-flex flex-column justify-content-center ms-5 pt-5">
+      <div className="d-flex flex-column justify-content-start" style={{ margin: '80px 20px 40px'}}>
         {[7, 23, 39].map((index) => (
           <div
             className="card m-4"  
