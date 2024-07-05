@@ -38,9 +38,8 @@ const UI = () => {
   const handleLogin = (e) => {
     e.preventDefault();
     if (validateEmail(email) && validatePassword(password)) {
-      navigate("/app");
-    }else{
       alert("Khul ja sim-sim!");
+      navigate("/app");
     }
   };
 
