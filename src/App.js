@@ -216,217 +216,217 @@ function App() {
 
   return (
     <div
-      className="d-flex flex-column flex-lg-row justify-content-start ps-5 pt-5 pe-5 pb-5"
+  className="d-flex flex-column flex-lg-row justify-content-start ps-5 pt-5 pe-5 pb-5"
+  style={{
+    backgroundImage: backgroundImageUrl
+      ? `url(${backgroundImageUrl})`
+      : "none",
+    backgroundSize: "cover",
+    backgroundPosition: "center",
+    minHeight: "100vh",
+    width: "100vw",
+  }}
+>
+  <div className="col-12 col-lg-3 col-xl-5 mt-5 pt-5 ps-5 ms-5">
+    <div
+      className="card text-body shadow-lg"
       style={{
-        backgroundImage: backgroundImageUrl
-          ? `url(${backgroundImageUrl})`
-          : "none",
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-        minHeight: "100vh",
-        width: "100vw",
+        borderRadius: 35,
+        backgroundColor: "rgba(255, 255, 255, 0.7 )",
+        backdropFilter: "blur(10px)",
+        border: "1px solid rgba(255, 255, 255, 0.125)",
       }}
     >
-      <div className="col-md-4 col-lg-3 col-xl-5 mt-5 pt-5 ps-5 ms-5">
-        <div
-          className="card text-body shadow-lg"
-          style={{
-            borderRadius: 35,
-            backgroundColor: "rgba(255, 255, 255, 0.7 )",
-            backdropFilter: "blur(10px)",
-            border: "1px solid rgba(255, 255, 255, 0.125)",
-          }}
-        >
-          <div className="card-body p-4">
-            <div className="d-flex justify-content-between">
-              <h4 className="flex-grow-1">{data?.name}</h4>
-              <h6>
-                {currenttime()} {getCurrentDate()}
-              </h6>
-            </div>
+      <div className="card-body p-4">
+        <div className="d-flex justify-content-between">
+          <h4 className="flex-grow-1">{data?.name}</h4>
+          <h6>
+            {currenttime()} {getCurrentDate()}
+          </h6>
+        </div>
 
-            <div className="d-grid col-12 mt-4 gap-3">
-              <input
-                type="text"
-                className="form-control"
-                value={inputcity}
-                onChange={handlechangeinput}
-                placeholder="Enter City Name"
-              ></input>
-              <button
-                className="btn btn-primary"
-                type="button"
-                onClick={handlesearch}
-              >
-                Search
-              </button>
-            </div>
+        <div className="d-grid col-12 mt-4 gap-3">
+          <input
+            type="text"
+            className="form-control"
+            value={inputcity}
+            onChange={handlechangeinput}
+            placeholder="Enter City Name"
+          ></input>
+          <button
+            className="btn btn-primary"
+            type="button"
+            onClick={handlesearch}
+          >
+            Search
+          </button>
+        </div>
 
-            <div className="d-flex flex-column text-center mt-5 mb-4">
-              <h6 className="display-4 mb-0 font-weight-bold">
-                {data?.main?.temp}°C
-              </h6>
-              <span className="small" style={{ color: "#01144a" }}>
-                {data?.weather?.[0]?.main}
+        <div className="d-flex flex-column text-center mt-5 mb-4">
+          <h6 className="display-4 mb-0 font-weight-bold">
+            {data?.main?.temp}°C
+          </h6>
+          <span className="small" style={{ color: "#01144a" }}>
+            {data?.weather?.[0]?.main}
+          </span>
+        </div>
+
+        <div className="d-flex align-items-center">
+          <div className="flex-grow-1" style={{ fontSize: "1rem" }}>
+            <div>
+              <i
+                className="fas fa-wind fa-fw"
+                style={{ color: "#868B94" }}
+              />{" "}
+              <span className="ms-1">Wind : {data?.wind?.speed}m/s</span>
+            </div>
+            <div>
+              <i
+                className="fas fa-wind fa-fw"
+                style={{ color: "#868B94" }}
+              />{" "}
+              <span className="ms-1">
+                Direction : {data?.wind?.deg}{" "}
+                {getWindDirection(data?.wind?.deg)}
               </span>
             </div>
-
-            <div className="d-flex align-items-center">
-              <div className="flex-grow-1" style={{ fontSize: "1rem" }}>
-                <div>
-                  <i
-                    className="fas fa-wind fa-fw"
-                    style={{ color: "#868B94" }}
-                  />{" "}
-                  <span className="ms-1">Wind : {data?.wind?.speed}m/s</span>
-                </div>
-                <div>
-                  <i
-                    className="fas fa-wind fa-fw"
-                    style={{ color: "#868B94" }}
-                  />{" "}
-                  <span className="ms-1">
-                    Direction : {data?.wind?.deg}{" "}
-                    {getWindDirection(data?.wind?.deg)}
-                  </span>
-                </div>
-                <div>
-                  <i
-                    className="fas fa-tint fa-fw"
-                    style={{ color: "#868B94" }}
-                  />{" "}
-                  <span className="ms-1">Real Feel : {data?.main?.temp}°C</span>
-                </div>
-                <div>
-                  <i
-                    className="fas fa-sun fa-fw"
-                    style={{ color: "#868B94" }}
-                  />{" "}
-                  <span className="ms-1">
-                    Humidity : {data?.main?.humidity}
-                  </span>
-                </div>
-                <div>
-                  <i
-                    className="fas fa-sun fa-fw"
-                    style={{ color: "#868B94" }}
-                  />{" "}
-                  <span className="ms-1">
-                    Sea Level : {data?.main?.sea_level} hPa
-                  </span>
-                </div>
+            <div>
+              <i
+                className="fas fa-tint fa-fw"
+                style={{ color: "#868B94" }}
+              />{" "}
+              <span className="ms-1">Real Feel : {data?.main?.temp}°C</span>
+            </div>
+            <div>
+              <i
+                className="fas fa-sun fa-fw"
+                style={{ color: "#868B94" }}
+              />{" "}
+              <span className="ms-1">
+                Humidity : {data?.main?.humidity}
+              </span>
+            </div>
+            <div>
+              <i
+                className="fas fa-sun fa-fw"
+                style={{ color: "#868B94" }}
+              />{" "}
+              <span className="ms-1">
+                Sea Level : {data?.main?.sea_level} hPa
+              </span>
+            </div>
+          </div>
+          <div>
+            <div className="mb-4">
+              <div>
+                <i
+                  className="fas fa-sun fa-fw"
+                  style={{ color: "#868B94" }}
+                />{" "}
+                <span className="ms-1 mb-5">
+                  Max : {data?.main?.temp_max}°C
+                </span>
               </div>
               <div>
-                <div className="mb-4">
-                  <div>
-                    <i
-                      className="fas fa-sun fa-fw"
-                      style={{ color: "#868B94" }}
-                    />{" "}
-                    <span className="ms-1 mb-5">
-                      Max : {data?.main?.temp_max}°C
-                    </span>
-                  </div>
-                  <div>
-                    <i
-                      className="fas fa-sun fa-fw"
-                      style={{ color: "#868B94" }}
-                    />{" "}
-                    <span className="ms-1 mb-5">
-                      Min : {data?.main?.temp_min}°C
-                    </span>
-                  </div>
-                </div>
-                <img src={newweathericon} width="100px" alt="" />
+                <i
+                  className="fas fa-sun fa-fw"
+                  style={{ color: "#868B94" }}
+                />{" "}
+                <span className="ms-1 mb-5">
+                  Min : {data?.main?.temp_min}°C
+                </span>
               </div>
             </div>
+            <img src={newweathericon} width="100px" alt="" />
           </div>
         </div>
       </div>
-
-      <div className="d-flex flex-column justify-content-start ms-5" style={{padding:"80px"}}>
-        {[0, 15, 31].map((index) => (
-          <div
-            className="card m-4"  
-            style={{
-              width: "15rem",
-              height: "9rem",
-              backgroundColor: "rgba(255, 255, 255, 0.7 )",
-              backdropFilter: "blur(10px)",
-              border: "1px solid rgba(255, 255, 255, 0.125)",
-            }}
-            key={index}
-          > 
-            <div className="d-flex align-items-center m-1">
-              <h5 className="m-2 pb-2 pe-5 ps-2">{getDayOfWeek(weeklydata[index]?.dt_txt.slice(0, 10))}</h5>
-              <img
-                className="ms-5 pb-1"
-                src={cardweathericon(weeklydata[index]?.weather?.[0]?.main)}
-                width="40px"
-                height="40px"
-                alt=""
-              />
-            </div>
-
-            <div className="d-flex align-items-center m-1">
-              <h6 className="ms-2">{weeklydata[index]?.dt_txt.slice(0, 10)}</h6>
-              <p className="ms-5">{weeklydata[index]?.weather?.[0]?.main}</p>
-            </div>
-
-            <div className="d-flex align-items-center ">
-              <p className="ms-2">
-                Max : {weeklydata[index]?.main?.temp_max}°C
-              </p>
-              <p className="ms-4">  
-                Min : {weeklydata[index]?.main?.temp_min}°C
-              </p>
-            </div>
-
-          </div>
-        ))}
-      </div>  
-      <div className="d-flex flex-column justify-content-start" style={{ margin: '80px 20px 40px'}}>
-        {[7, 23, 39].map((index) => (
-          <div
-            className="card m-4"  
-            style={{
-              width: "15rem",
-              height: "9rem",
-              backgroundColor: "rgba(255, 255, 255, 0.7 )",
-              backdropFilter: "blur(10px)",
-              border: "1px solid rgba(255, 255, 255, 0.125)",
-            }}
-            key={index}
-          > 
-            <div className="d-flex align-items-center m-1">
-              <h5 className="m-2 pb-2 pe-5 ps-2">{getDayOfWeek(weeklydata[index]?.dt_txt.slice(0, 10))}</h5>
-              <img
-                className="ms-5 pb-1"
-                src={cardweathericon(weeklydata[index]?.weather?.[0]?.main)}
-                width="40px"
-                height="40px"
-                alt=""
-              />
-            </div>
-
-            <div className="d-flex align-items-center m-1">
-              <h6 className="ms-2">{weeklydata[index]?.dt_txt.slice(0, 10)}</h6>
-              <p className="ms-5">{weeklydata[index]?.weather?.[0]?.main}</p>
-            </div>
-
-            <div className="d-flex align-items-center ">
-              <p className="ms-2">
-                Max : {weeklydata[index]?.main?.temp_max}°C
-              </p>
-              <p className="ms-4">  
-                Min : {weeklydata[index]?.main?.temp_min}°C
-              </p>
-            </div>
-
-          </div>
-        ))}
-      </div>   
     </div>
+  </div>
+
+  <div className="d-flex flex-column justify-content-start ms-5 mt-5 mt-lg-0" style={{padding:"80px"}}>
+    {[0, 15, 31].map((index) => (
+      <div
+        className="card m-4"  
+        style={{
+          width: "15rem",
+          height: "9rem",
+          backgroundColor: "rgba(255, 255, 255, 0.7 )",
+          backdropFilter: "blur(10px)",
+          border: "1px solid rgba(255, 255, 255, 0.125)",
+        }}
+        key={index}
+      > 
+        <div className="d-flex align-items-center m-1">
+          <h5 className="m-2 pb-2 pe-5 ps-2">{getDayOfWeek(weeklydata[index]?.dt_txt.slice(0, 10))}</h5>
+          <img
+            className="ms-5 pb-1"
+            src={cardweathericon(weeklydata[index]?.weather?.[0]?.main)}
+            width="40px"
+            height="40px"
+            alt=""
+          />
+        </div>
+
+        <div className="d-flex align-items-center m-1">
+          <h6 className="ms-2">{weeklydata[index]?.dt_txt.slice(0, 10)}</h6>
+          <p className="ms-5">{weeklydata[index]?.weather?.[0]?.main}</p>
+        </div>
+
+        <div className="d-flex align-items-center ">
+          <p className="ms-2">
+            Max : {weeklydata[index]?.main?.temp_max}°C
+          </p>
+          <p className="ms-4">  
+            Min : {weeklydata[index]?.main?.temp_min}°C
+          </p>
+        </div>
+
+      </div>
+    ))}
+  </div>  
+  <div className="d-flex flex-column justify-content-start mt-5 mt-lg-0" style={{ margin: '80px 20px 40px'}}>
+    {[7, 23, 39].map((index) => (
+      <div
+        className="card m-4"  
+        style={{
+          width: "15rem",
+          height: "9rem",
+          backgroundColor: "rgba(255, 255, 255, 0.7 )",
+          backdropFilter: "blur(10px)",
+          border: "1px solid rgba(255, 255, 255, 0.125)",
+        }}
+        key={index}
+      > 
+        <div className="d-flex align-items-center m-1">
+          <h5 className="m-2 pb-2 pe-5 ps-2">{getDayOfWeek(weeklydata[index]?.dt_txt.slice(0, 10))}</h5>
+          <img
+            className="ms-5 pb-1"
+            src={cardweathericon(weeklydata[index]?.weather?.[0]?.main)}
+            width="40px"
+            height="40px"
+            alt=""
+          />
+        </div>
+
+        <div className="d-flex align-items-center m-1">
+          <h6 className="ms-2">{weeklydata[index]?.dt_txt.slice(0, 10)}</h6>
+          <p className="ms-5">{weeklydata[index]?.weather?.[0]?.main}</p>
+        </div>
+
+        <div className="d-flex align-items-center ">
+          <p className="ms-2">
+            Max : {weeklydata[index]?.main?.temp_max}°C
+          </p>
+          <p className="ms-4">  
+            Min : {weeklydata[index]?.main?.temp_min}°C
+          </p>
+        </div>
+
+      </div>
+    ))}
+  </div>   
+</div>
   );
 }
 
